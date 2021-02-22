@@ -19,6 +19,15 @@ let getRequest = (url, cb) => {
     }
 };
 
+fetchGoods () {
+    fetch('url')
+    .then(rawData => rawData.json())
+    .then(data => console.log(data))
+    .catch(err => {
+        console.warn('Проверьте соединение с интернетом', err)
+    })
+}
+
 let getRequestNew = new Promise((resoleve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'url', true);
@@ -32,6 +41,8 @@ let getRequestNew = new Promise((resoleve, reject) => {
     getRequestNew.catch((error) => {
         console.log('some error');
     });
+
+
 
 class Products {
     products = [];
