@@ -21,7 +21,9 @@ let getRequest = (url, cb) => {
 
 fetchGoods () {
     fetch('url')
-    .then(rawData => rawData.json())
+    .then(rawData => {
+        return rawData.json()
+    })
     .then(data => console.log(data))
     .catch(err => {
         console.warn('Проверьте соединение с интернетом', err)
